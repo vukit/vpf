@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Pet Feeders</string>
+    <string name="app_logo" translatable="false">Logo</string>
+    <string name="vendor_name" translatable="false">vukit.ru</string>
+    <string name="press_search_button">Press search button</string>
+    <string name="no_feeders_found">No feeders found</string>
+    <string name="searching">Searching…</string>
+    <string name="menu_feeders">Feeders</string>
+    <string name="menu_feeder">Feeder</string>
+    <string name="menu_about">About</string>
+    <string name="fab_search_feeders">Find feeders</string>
+    <string name="action_view_instruction">Instruction</string>
+    <string name="action_view_privacy_policy">Privacy Policy</string>
+    <string name="action_view_license">License</string>
+    <string name="action_view_all_projects">All projects</string>
+    <string name="action_all_projects_url">https://vukit.ru/en/</string>
+    <string name="action_vendor_url">https://vukit.ru/en/</string>
+    <string name="app_version">Version</string>
+    <string name="action_instruction_url">https://vukit.ru/en/projects/pet-feeder/</string>
+    <string name="action_privacy_policy_url" translatable="false">https://vukit.ru/privacy-policy/pet-feeder/</string>
+    <string name="action_license_url" translatable="false">https://vukit.ru/licenses/mit/</string>
+    <string name="about_text">The application for settings pet feeders.</string>
+    <string name="device_name">Name:</string>
+    <string name="device_mac_address">MAC address:</string>
+    <string name="device_rssi" translatable="false">RSSI, dBm:</string>
+    <string name="device_temperature">Temperature, &#176;C:</string>
+    <string name="device_weight">Feed weight, grams:</string>
+    <string name="toast_permissions">For the application to function fully, you must provide all requested permissions</string>
+    <string name="feeder_button_save">Save</string>
+    <string name="feeder_button_feed">Feed</string>
+    <string name="feeder_settings_reading">Settings reading…</string>
+    <string name="feeder_settings_reading_fail">Settings reading fail</string>
+    <string name="feeder_settings_reading_fail_feeder_busy">Settings reading fail, feeder busy</string>
+    <string name="feeder_settings_writing">Settings writing…</string>
+    <string name="feeder_settings_writing_success">Settings writing success</string>
+    <string name="feeder_settings_writing_fail">Settings writing fail</string>
+    <string name="feeder_settings_writing_fail_feeder_busy">Settings writing fail, feeder busy</string>
+    <string name="feeder_sending_feeding_command">Feeding, shipped grams:</string>
+    <string name="feeder_sending_feeding_command_success">Feeding command success</string>
+    <string name="feeder_sending_feeding_command_fail">Feeding command fail</string>
+    <string name="feeder_sending_feeding_command_fail_feeder_busy">Sending feeding command fail, feeder busy</string>
+    <string name="fab_feeder_settings_refresh" translatable="false">Feeder settings refresh</string>
+    <string name="set_scales_zero">Set scales zero</string>
+    <string name="feeding_mode">Feeding mode</string>
+    <string name="feeding_time">Time</string>
+    <string name="feeding_weight">Weight, grams</string>
+    <string name="feeder_current_firmware">Current version firmware:</string>
+    <string name="feeder_available_firmware">Available version firmware:</string>
+    <string name="feeder_button_update_firmware">Update firmware</string>
+    <string name="feeder_updating_firmware_progress">Updating firmware:</string>
+    <string name="feeder_updating_firmware_success">Updating firmware success</string>
+    <string name="feeder_updating_firmware_fail">Updating firmware fail</string>
+    <string name="feeder_main_screen" translatable="false">Feeder main screen</string>
+</resources>

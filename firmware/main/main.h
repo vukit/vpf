@@ -1,0 +1,2 @@
+#define VERSION "2.0.5"
+#define MODEL_NUMBER_STR "HW:2.0, FW:" VERSION

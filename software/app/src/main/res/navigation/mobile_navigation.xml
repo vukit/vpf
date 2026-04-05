@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_feeders">
+
+    <fragment
+        android:id="@+id/nav_feeders"
+        android:name="ru.vukit.pf.ui.feeders.FeedersFragment"
+        android:label="@string/menu_feeders"
+        tools:layout="@layout/fragment_feeders" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="ru.vukit.pf.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_feeder"
+        android:name="ru.vukit.pf.ui.feeder.FeederFragment"
+        android:label="@string/menu_feeder"
+        tools:layout="@layout/fragment_feeder" />
+
+</navigation>

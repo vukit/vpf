@@ -1,0 +1,49 @@
+menu "Feeder config"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+    config MOTOR_DRIVER_PORT
+        int "Motor driver port"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 4 if IDF_TARGET_ESP32C3
+        help
+            GPIO number (IOxx) port to motor driver.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to motor driver.
+
+    config HX711_SERIAL_CLOCK_INPUT_PORT
+        int "HX711 serial clock input port"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 2 if IDF_TARGET_ESP32C3
+        help
+            GPIO number (IOxx) port to HX711 serial clock input.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to HX711 serial clock input.
+
+    config HX711_SERIAL_DATA_OUTPUT_PORT
+        int "HX711 serial data output port"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 3 if IDF_TARGET_ESP32C3
+        help
+            GPIO number (IOxx) port to HX711 serial data output.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to HX711 serial data output.
+
+    config HX711_AVG_TIMES
+        int "Samples to average for HX711"
+        default 5
+
+    config DS3231_SCL_INPUT_PORT
+        int "DS3231 SCL input port"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 10 if IDF_TARGET_ESP32C3
+        help
+            GPIO number (IOxx) port to DS3231 SCL input.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to DS3231 SCL input.
+
+    config DS3231_SDA_OUTPUT_PORT
+        int "DS3231 SDA output port"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 8 if IDF_TARGET_ESP32C3
+        help
+            GPIO number (IOxx) port to DS3231 SDA output.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to DS3231 SDA output.
+
+endmenu

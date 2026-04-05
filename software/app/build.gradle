@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+def propertiesFile = file(System.getenv('HOME') + "/.android-properties")
+def properties = new Properties()
+properties.load(new FileInputStream(propertiesFile))
+
+secrets {
+    propertiesFileName = propertiesFile
+}
+
+android {
+    namespace 'ru.vukit.pf'
+    compileSdk 34
+
+    signingConfigs {
+        config {
+            keyAlias properties['KEY_ALIAS']
+            keyPassword properties['KEY_PASSWORD']
+            storeFile file(properties['STORE_FILE'])
+            storePassword properties['STORE_PASSWORD']
+        }
+    }
+
+    defaultConfig {
+        applicationId "ru.vukit.pf"
+        minSdk 28
+        targetSdk 34
+        versionCode 200
+        versionName "2.0.0"
+        vectorDrawables.useSupportLibrary = true
+        signingConfig signingConfigs.config
+        resourceConfigurations += ['ru', 'en']
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
+        }
+        debug {
+            renderscriptDebuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_9
+        targetCompatibility JavaVersion.VERSION_1_9
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lint {
+        disable 'Deprecation'
+    }
+    bundle {
+        storeArchive {
+            enable = false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+    implementation 'androidx.navigation:navigation-fragment:2.7.7'
+    implementation 'androidx.navigation:navigation-ui:2.7.7'
+    implementation 'com.uncopt:android.justified:1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

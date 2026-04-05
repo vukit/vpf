@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.feeder.FeederFragment">
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/feeder_progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/feeder_main_screen"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/feeder_main_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/feeder_button_feed"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/feeder_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/feeder_progress_indicator">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:labelFor="@id/feeder_name"
+                    android:text="@string/device_name"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/feeder_name"
+                    android:layout_width="320dp"
+                    android:layout_height="48dp"
+                    android:autofillHints=""
+                    android:inputType="text|textNoSuggestions"
+                    android:lines="1"
+                    android:maxLength="16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feeder_weight_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/feeder_name_layout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/device_weight"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/feeder_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feeder_temperature_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/device_temperature"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/feeder_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/feeding_mode"
+                android:textColor="@color/parameterColor"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:id="@+id/feeding_mode_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/border"
+                android:columnCount="4"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/feeding_mode_cell_padding"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/feeding_mode_cell_padding"
+                    android:text="@string/feeding_time"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/feeding_1_time"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/feeding_2_time"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/feeding_3_time"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/feeding_mode_cell_padding"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/feeding_mode_cell_padding"
+                    android:text="@string/feeding_weight"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/feeding_1_weight"
+                    android:layout_width="48dp"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:autofillHints=""
+                    android:inputType="number"
+                    android:maxLength="3" />
+
+                <EditText
+                    android:id="@+id/feeding_2_weight"
+                    android:layout_width="48dp"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:autofillHints=""
+                    android:inputType="number"
+                    android:maxLength="3" />
+
+                <EditText
+                    android:id="@+id/feeding_3_weight"
+                    android:layout_width="48dp"
+                    android:layout_margin="@dimen/feeding_mode_cell_padding"
+                    android:autofillHints=""
+                    android:inputType="number"
+                    android:maxLength="3" />
+
+            </GridLayout>
+
+            <CheckBox
+                android:id="@+id/feeder_set_scales_zero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:padding="8dp"
+                android:text="@string/set_scales_zero"
+                android:textColor="@color/parameterColor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feeding_mode_layout" />
+
+            <Button
+                android:id="@+id/feeder_save_button"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/bgColorButton"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/feeder_button_save"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feeder_set_scales_zero" />
+
+            <LinearLayout
+                android:id="@+id/feeder_feed_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/feeder_save_button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:labelFor="@id/feeder_feed_weight"
+                    android:text="@string/feeding_weight"
+                    android:textColor="@color/parameterColor"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/feeder_feed_weight"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:autofillHints=""
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/feeder_feed_button"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/bgColorButton"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/feeder_button_feed"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feeder_feed_layout" />
+
+            <LinearLayout
+                android:id="@+id/feeder_update_firmware_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/feeder_feed_button">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/feeder_current_firmware"
+                        android:textColor="@color/parameterColor"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/feeder_current_firmware"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/feeder_available_firmware"
+                        android:textColor="@color/parameterColor"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/feeder_available_firmware"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/feeder_update_firmware_button"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/bgColorButton"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/feeder_button_update_firmware"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_feeder_settings_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/fab_feeder_settings_refresh"
+        android:visibility="gone"
+        app:backgroundTint="@color/bgColorFAB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_action_refresh"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/feeder_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:text="@string/feeder_settings_reading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

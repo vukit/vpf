@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "vpf")(type "KiCad")(uri "${KIPRJMOD}/vpf.pretty")(options "")(descr ""))
+)
